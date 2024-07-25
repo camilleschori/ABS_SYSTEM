@@ -29,8 +29,13 @@
                 @php
                     $sidebar_items = [
                         ['name' => 'الصفحة الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
+
+                        ['name' => 'الفئات السعر', 'icon' => 'bi-tags', 'route' => route('admin.price_groups.index')],
+                    ]
+
                         ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
                     ];
+
                 @endphp
 
 
