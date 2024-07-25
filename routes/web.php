@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,11 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
 // Group for authenticated admin routes
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+
+
+    Route::resource('users', UsersController::class);
+
+
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

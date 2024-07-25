@@ -22,6 +22,7 @@
                     @php
                         $cards = [
                             ['name' => 'الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
+                            ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
                         ];
 
                     @endphp
