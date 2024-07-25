@@ -8,8 +8,8 @@
                 <div class="logo">
                     <a href="/">
 
-                        <img src="{{ url('admin/assets/images/invoice-logo.png') }}" alt="" srcset="">
-                        {{-- <span class="logo-text">المشجر الحديث</span> --}}
+                        <img src="{{ url('assets/images/logo.jpg') }}" alt="" srcset="" style="height: 100px !important">
+                        
                     </a>
                 </div>
 
@@ -25,355 +25,32 @@
             <ul class="menu">
 
 
+                @php
+                    $sidebar_items = [
+                        ['name' => 'الصفحة الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
+                    ]
+                @endphp
+
+
+
+                @foreach ($sidebar_items as $sidebar_item)
+                    <li class="sidebar-item">
+                        <a href="{{ $sidebar_item['route'] }}" class='sidebar-link'>
+                            <i class="bi bi-house"></i>
+                            <span>{{ $sidebar_item['name'] }}</span>
+                        </a>
+                    </li>
+                @endforeach
+
+                
+
                 <li class="sidebar-item">
-                    <a href="/" class='sidebar-link'>
-                        <i class="bi bi-house"></i>
-                        <span>الصفحة الرئيسية</span>
+                    <a href="{{ route('admin.logout') }}" class='sidebar-link text-danger'>
+                        <i class="bi bi-box-arrow-right text-danger"></i>
+                        <span>تسجيل الخروج</span>
                     </a>
                 </li>
 
-                @can('access roles')
-                    <li class="sidebar-item">
-                        <a href="{{ route('drugstore.roles-permissions.index') }}" class='sidebar-link'>
-                            <i class="bi bi-lock"></i>
-                            <span>الصلاحيات</span>
-                        </a>
-                    </li>
-                @endcan
-
-                @if (auth()->user()->type == 'drugstore' || auth()->user()->type == 'admin')
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-bag"></i>
-                            <span>قسم المواد</span>
-                        </a>
-
-                        <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.items.index') }}" class='submenu-link'>
-                                    <i class="bi bi-capsule"></i>
-                                    <span>تعريف المواد</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.brands.index') }}" class='submenu-link'>
-                                    <i class="bi bi-bookmarks"></i>
-                                    <span>تعريف الوكالات</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.price_groups.index') }}" class='submenu-link'>
-                                    <i class="bi bi-currency-dollar"></i>
-                                    <span>فئات السعر</span>
-                                </a>
-                            </li>
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.packages.index') }}" class='submenu-link'>
-                                    <i class="bi bi-box"></i>
-                                    <span>التغليف</span>
-                                </a>
-                            </li>
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.manufacturers.index') }}" class='submenu-link'>
-                                    <i class="bi bi-house-down-fill"></i>
-                                    <span>المصانع</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.categories.index') }}" class='submenu-link'>
-                                    <i class="bi bi-pie-chart"></i>
-                                    <span>تصنيفات المواد</span>
-                                </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.stock.index') }}" class='submenu-link'>
-                                    <i class="bi bi-box-seam"></i>
-                                    <span>المخزن</span>
-                                </a>
-                            </li>
-
-                        </ul>
-
-
-                    </li>
-
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-currency-dollar"></i>
-                            <span>قسم الحسابات</span>
-                        </a>
-
-                        <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.accounts.index') }}" class='submenu-link'>
-                                    <i class="bi bi-diagram-3"></i>
-                                    <span>شجرة الحسابات</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.transactions.index') }}" class='submenu-link'>
-                                    <i class="bi bi-journal-bookmark"></i>
-                                    <span>القيود</span>
-                                </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.bonds.index') }}" class='submenu-link'>
-                                    <i class="bi bi-journal-bookmark"></i>
-                                    <span>السندات</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.operations.index') }}" class="submenu-link">
-                                    <i class="bi bi-plus-slash-minus"></i>
-                                    <span>عمليات المستودع</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.accounting_operations.index') }}" class="submenu-link">
-                                    <i class="bi bi-plus-slash-minus"></i>
-                                    <span>عمليات محاسبية</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.invoices.index') }}" class='submenu-link'>
-                                    <i class="bi bi-cart"></i>
-                                    <span>الوثائق</span>
-                                </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.settelments.index') }}" class='submenu-link'>
-                                    <i class="bi bi-cart"></i>
-                                    <span>الاستحصال</span>
-                                </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.cost_centers.index') }}" class='submenu-link'>
-                                    <i class="bi bi-bank"></i>
-                                    <span>مراكز الكلف</span>
-                                </a>
-                            </li>
-
-
-
-                        </ul>
-
-
-                    </li>
-
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-bar-chart-line"></i>
-                            <span>قسم التقارير</span>
-                        </a>
-
-                        <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
-
-
-                            <li class="submenu-item ">
-                                <a href="/drugstore/reports/general_ledger" class='submenu-link'>
-                                    <i class="bi bi-journal-bookmark"></i>
-                                    <span>دفتر الاستاذ</span>
-                                </a>
-                            </li>
-
-
-                            <li class="submenu-item ">
-                                <a href="/drugstore/reports/trial_balance" class='submenu-link'>
-                                    <i class="bi bi-arrow-left-right"></i>
-                                    <span>ميزان المراجعة</span>
-                                </a>
-                            </li>
-
-
-
-                            <li class="submenu-item ">
-
-                                <a href="/drugstore/reports/account_statment" class='submenu-link'>
-                                    <i class="bi bi-wallet2"></i>
-                                    <span>كشف مديونية</span>
-                                </a>
-
-                            </li>
-                            <li class="submenu-item ">
-
-                                <a href="/drugstore/reports/cost_centers" class='submenu-link'>
-                                    <i class="bi bi-wallet2"></i>
-                                    <span>كشف مراكز الكلف</span>
-                                </a>
-
-                            </li>
-
-
-
-
-                            <li class="submenu-item ">
-                                <a href="/drugstore/reports/material_movement" class='submenu-link'>
-                                    <i class="bi bi-ui-checks"></i>
-                                    <span>حركات المادة</span>
-                                </a>
-                            </li>
-
-
-                            <li class="submenu-item ">
-                                <a href="/drugstore/reports/warehouse_inventory" class='submenu-link'>
-                                    <i class="bi bi-boxes"></i>
-                                    <span>جرد المخزن</span>
-                                </a>
-                            </li>
-
-
-                        </ul>
-
-                    </li>
-
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-people"></i>
-                            <span>قسم المستخدمين</span>
-                        </a>
-
-                        <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.users.index') }}" class='submenu-link'>
-                                    <i class="bi bi-person"></i>
-                                    <span>تعريف المستخدمين</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.profiles.index') }}" class='submenu-link'>
-                                    <i class="bi bi-person-video2"></i>
-                                    <span>الملفات الشخصية</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.join_requests.index') }}" class='submenu-link'>
-                                    <i class="bi bi-card-list"></i>
-                                    <span>طلبات الانضمام</span>
-                                </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.promo_codes.index') }}" class='submenu-link'>
-                                    <i class="bi bi-percent"></i>
-                                    <span>اكواد الخصم</span>
-                                </a>
-                            </li>
-
-
-
-                        </ul>
-
-
-                    </li>
-
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class="sidebar-link">
-                            <i class="bi bi-gear"></i>
-                            <span>اقسام اخرى</span>
-                        </a>
-
-                        <ul class="submenu submenu-closed" style="--submenu-height: 774px;">
-
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.regions.index') }}" class='submenu-link'>
-                                    <i class="bi bi-globe-americas"></i>
-                                    <span>المناطق</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.banners.index') }}" class='submenu-link'>
-                                    <i class="bi bi-image"></i>
-                                    <span>الاعلانات</span>
-                                </a>
-                            </li>
-
-                            <li class="submenu-item ">
-                                <a href="{{ route('drugstore.settings.index') }}" class='submenu-link'>
-                                    <i class="bi bi-sliders"></i>
-                                    <span>الاعدادات</span>
-                                </a>
-                            </li>
-
-
-
-
-                        </ul>
-
-
-                    </li>
-                @endif
-
-
-                @if (auth()->user()->type == 'bureau')
-                    <li class="sidebar-item">
-                        <a href="{{ route('bureau.stock.index') }}" class='sidebar-link'>
-                            <i class="bi bi-box-seam"></i>
-                            <span>المخزن</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a href="{{ route('bureau.invoices.index') }}" class='sidebar-link'>
-                            <i class="bi bi-cart"></i>
-                            <span>الوثائق</span>
-                        </a>
-                    </li>
-
-
-                    <li class="sidebar-item">
-                        <a href="/bureau/reports/general_ledger" class='sidebar-link'>
-                            <i class="bi bi-journal-bookmark"></i>
-                            <span>كشف حساب</span>
-                        </a>
-                    </li>
-
-
-                    <li class="sidebar-item">
-                        <a href="/bureau/reports/warehouse_inventory" class='sidebar-link'>
-                            <i class="bi bi-boxes"></i>
-                            <span>جرد المواد</span>
-                        </a>
-                    </li>
-                @endif
-
-
-                @if (Auth::check())
-                    @if (Auth::user()->type === 'drugstore' || Auth::user()->type === 'admin')
-                        <li class="sidebar-item">
-                            <a href="{{ route('drugstore.logout') }}" class='sidebar-link text-danger'>
-                                <i class="bi bi-box-arrow-right text-danger"></i>
-                                <span>تسجيل الخروج</span>
-                            </a>
-                        </li>
-                    @elseif(Auth::user()->type === 'bureau')
-                        <li class="sidebar-item">
-                            <a href="{{ route('bureau.logout') }}" class='sidebar-link text-danger'>
-                                <i class="bi bi-box-arrow-right text-danger"></i>
-                                <span>تسجيل الخروج</span>
-                            </a>
-                        </li>
-                    @endif
-                @endif
             </ul>
 
 

@@ -8,10 +8,10 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ url('admin/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/print.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/print.css') }}">
 
-    <script src="{{ url('admin/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
 
 </head>
 

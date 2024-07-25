@@ -26,7 +26,7 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
 });
 
 // Group for authenticated admin routes
-Route::prefix('admins')->name('admin.')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

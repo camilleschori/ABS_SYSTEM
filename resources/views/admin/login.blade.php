@@ -12,7 +12,7 @@
             <div class="col-lg-3 col-10 bg-white shadow-sm border rounded-4 glass ">
                 <div id="auth-left" style="padding: 2rem">
                     <div class="mb-4 text-center">
-                        <a href="/"><img src="{{ url('admin/assets/images/logo.webp') }}" class="img-fluid" width="130"
+                        <a href="/"><img src="{{ url('website/images/logo.jpg') }}" class="img-fluid" width="130"
                                 alt="Logo"></a>
                     </div>
                     <h3 class="mb-3 text-center">تسجيل دخول</h3>

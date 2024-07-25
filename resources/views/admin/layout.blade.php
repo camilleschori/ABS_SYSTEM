@@ -7,27 +7,27 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ url('admin/assets/compiled/css/app.rtl.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/compiled/css/app-dark.rtl.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/compiled/css/app.rtl.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/compiled/css/app-dark.rtl.css') }}">
 
 
 
-    <link rel="shortcut icon" href="{{ url('admin/assets/compiled/svg/favicon.svg') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ url('admin/assets/compiled/svg/favicon.svg') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ url('assets/compiled/svg/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('assets/compiled/svg/favicon.svg') }}" type="image/png">
 
 
-    <link rel="stylesheet" href="{{ url('admin/assets/compiled/css/iconly.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/compiled/css/auth.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/sweetalert2.min.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/leaflet.css') }}">
-    <link rel="stylesheet" href="{{ url('admin/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/compiled/css/iconly.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/compiled/css/auth.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/leaflet.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
 
 
-    <script src="{{ url('admin/assets/js/jquery.min.js') }}"></script>
-    <script src="{{ url('admin/assets/js/select2.min.js') }}"></script>
-    <script src="{{ url('admin/assets/js/leaflet.js') }}"></script>
-    <script src="{{ url('admin/assets/js/sweetalert2.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url('assets/js/select2.min.js') }}"></script>
+    <script src="{{ url('assets/js/leaflet.js') }}"></script>
+    <script src="{{ url('assets/js/sweetalert2.js') }}"></script>
 
 
 </head>
@@ -35,18 +35,18 @@
 <body class="overflow-hidden">
 
 
-    <script src="{{ url('admin/assets/static/js/initTheme.js') }}"></script>
+    <script src="{{ url('assets/static/js/initTheme.js') }}"></script>
 
     @yield('content')
 
 
 
 
-    <script src="{{ url('admin/assets/static/js/components/dark.js') }}"></script>
-    <script src="{{ url('admin/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ url('admin/assets/compiled/js/app.js') }}"></script>
-    <script src="{{ url('admin/assets/compiled/js/custom_script.js') }}"></script>
-    <script src="{{ url('admin/assets/static/js/pages/dashboard.js') }}"></script>
+    <script src="{{ url('assets/static/js/components/dark.js') }}"></script>
+    <script src="{{ url('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url('assets/compiled/js/app.js') }}"></script>
+    <script src="{{ url('assets/compiled/js/custom_script.js') }}"></script>
+    <script src="{{ url('assets/static/js/pages/dashboard.js') }}"></script>
     {{--
     <script>
         document.addEventListener('DOMContentLoaded', function() {
