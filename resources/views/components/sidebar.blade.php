@@ -8,8 +8,9 @@
                 <div class="logo">
                     <a href="/">
 
-                        <img src="{{ url('assets/images/logo.jpg') }}" alt="" srcset="" style="height: 100px !important">
-                        
+                        <img src="{{ url('assets/images/logo.jpg') }}" alt="" srcset=""
+                            style="height: 100px !important">
+
                     </a>
                 </div>
 
@@ -28,7 +29,8 @@
                 @php
                     $sidebar_items = [
                         ['name' => 'الصفحة الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
-                    ]
+                        ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
+                    ];
                 @endphp
 
 
@@ -36,13 +38,13 @@
                 @foreach ($sidebar_items as $sidebar_item)
                     <li class="sidebar-item">
                         <a href="{{ $sidebar_item['route'] }}" class='sidebar-link'>
-                            <i class="bi bi-house"></i>
+                            <i class="bi {{ $sidebar_item['icon'] }}"></i>
                             <span>{{ $sidebar_item['name'] }}</span>
                         </a>
                     </li>
                 @endforeach
 
-                
+
 
                 <li class="sidebar-item">
                     <a href="{{ route('admin.logout') }}" class='sidebar-link text-danger'>
