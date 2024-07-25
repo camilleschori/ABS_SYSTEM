@@ -22,6 +22,7 @@
                     @php
                         $cards = [
                             ['name' => 'الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
+                            ['name' => 'فئات السعر', 'icon' => 'bi-tags', 'route' => route('admin.price_groups.index')],
                         ];
 
                     @endphp

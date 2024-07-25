@@ -45,8 +45,10 @@
     <script src="{{ url('assets/static/js/components/dark.js') }}"></script>
     <script src="{{ url('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ url('assets/compiled/js/app.js') }}"></script>
-    <script src="{{ url('assets/compiled/js/custom_script.js') }}"></script>
-    <script src="{{ url('assets/static/js/pages/dashboard.js') }}"></script>
+
+    
+    {{-- <script src="{{ url('assets/compiled/js/custom_script.js') }}"></script>
+    <script src="{{ url('assets/static/js/pages/dashboard.js') }}"></script> --}}
     {{--
     <script>
         document.addEventListener('DOMContentLoaded', function() {

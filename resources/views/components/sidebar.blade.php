@@ -28,6 +28,7 @@
                 @php
                     $sidebar_items = [
                         ['name' => 'الصفحة الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
+                        ['name' => 'الفئات السعر', 'icon' => 'bi-tags', 'route' => route('admin.price_groups.index')],
                     ]
                 @endphp
 
@@ -36,7 +37,7 @@
                 @foreach ($sidebar_items as $sidebar_item)
                     <li class="sidebar-item">
                         <a href="{{ $sidebar_item['route'] }}" class='sidebar-link'>
-                            <i class="bi bi-house"></i>
+                            <i class="bi {{ $sidebar_item['icon'] }}"></i>
                             <span>{{ $sidebar_item['name'] }}</span>
                         </a>
                     </li>
