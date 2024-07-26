@@ -44,6 +44,8 @@
                             ['name' => 'المناطق', 'icon' => 'bi-map', 'route' => route('admin.regions.index')],
 
                             ['name' => 'التصنيفات', 'icon' => 'bi-list', 'route' => route('admin.categories.index')],
+                            ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
+                            ['name' => 'العملات', 'icon' => 'bi-currency-exchange', 'route' => route('admin.currencies.index')],
                         ];
 
                     @endphp

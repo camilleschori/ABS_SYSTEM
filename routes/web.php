@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\CurrenciesController;
 use App\Http\Controllers\PriceGroupsController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\WarehousesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,11 +51,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('suppliers', SuppliersController::class);
     Route::resource('categories', CategoriesController::class);
 
-
-
-
-
     Route::resource('price_groups', PriceGroupsController::class);
     Route::resource('brands', BrandsController::class);
     Route::resource('settings', SettingsController::class);
+    Route::resource('warehouses', WarehousesController::class);
+    Route::resource('currencies', CurrenciesController::class);
 });
