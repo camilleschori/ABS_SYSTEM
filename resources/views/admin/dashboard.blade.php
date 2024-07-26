@@ -27,6 +27,7 @@
 
                             ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
 
+                            ['name' => 'المناطق', 'icon' => 'bi-map', 'route' => route('admin.regions.index')],
                         ];
 
                     @endphp
