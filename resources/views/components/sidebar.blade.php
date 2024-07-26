@@ -47,6 +47,8 @@
                         ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
                         
                          ['name' => 'الاعدادات', 'icon' => 'bi-sliders', 'route' => route('admin.settings.index')],
+                         ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
+                         ['name' => 'العملات', 'icon' => 'bi-currency-exchange', 'route' => route('admin.currencies.index')],
                     ];
 
                 @endphp
