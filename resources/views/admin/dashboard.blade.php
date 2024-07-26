@@ -27,6 +27,9 @@
                             ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
                             ['name' => 'الاعدادات', 'icon' => 'bi-sliders', 'route' => route('admin.settings.index')],
 
+                            ['name' => 'المناطق', 'icon' => 'bi-map', 'route' => route('admin.regions.index')],
+
+                            ['name' => 'التصنيفات', 'icon' => 'bi-list', 'route' => route('admin.categories.index')],
                         ];
 
                     @endphp
