@@ -4,7 +4,9 @@
 
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\RegionsController;
+use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\UsersController;
 
 use Illuminate\Support\Facades\Route;
@@ -37,17 +39,19 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
 
 // Group for authenticated admin routes
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
-    
+
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-   Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('users', UsersController::class);
 
     Route::resource('regions', RegionsController::class);
+    Route::resource('customers', CustomersController::class);
+    Route::resource('suppliers', SuppliersController::class);
     Route::resource('categories', CategoriesController::class);
 
 
 
-   
+
 
     Route::resource('price_groups', PriceGroupsController::class);
     Route::resource('brands', BrandsController::class);
