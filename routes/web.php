@@ -3,6 +3,7 @@
 
 
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\RegionsController;
 use App\Http\Controllers\UsersController;
 
@@ -39,6 +40,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     Route::resource('users', UsersController::class);
     Route::resource('regions', RegionsController::class);
+    Route::resource('categories', CategoriesController::class);
 
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
