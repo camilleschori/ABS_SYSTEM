@@ -22,10 +22,10 @@
                     @php
                         $cards = [
                             ['name' => 'الرئيسية', 'icon' => 'bi-house', 'route' => route('admin.dashboard')],
-
-                            ['name' => 'فئات السعر', 'icon' => 'bi-tags', 'route' => route('admin.price_groups.index')],
-
+                            ['name' => 'الوكالات', 'icon' => 'bi-tags', 'route' => route('admin.brands.index')],
+                            ['name' => 'فئات السعر', 'icon' => 'bi-cash-coin', 'route' => route('admin.price_groups.index')],
                             ['name' => 'المستخدمين', 'icon' => 'bi-people', 'route' => route('admin.users.index')],
+                            ['name' => 'الاعدادات', 'icon' => 'bi-sliders', 'route' => route('admin.settings.index')],
 
                             ['name' => 'المناطق', 'icon' => 'bi-map', 'route' => route('admin.regions.index')],
 

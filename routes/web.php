@@ -10,7 +10,9 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\PriceGroupsController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,15 +37,19 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
 
 // Group for authenticated admin routes
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+    
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-
-
+   Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('users', UsersController::class);
+
     Route::resource('regions', RegionsController::class);
     Route::resource('categories', CategoriesController::class);
 
 
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+   
 
     Route::resource('price_groups', PriceGroupsController::class);
+    Route::resource('brands', BrandsController::class);
+    Route::resource('settings', SettingsController::class);
 });
