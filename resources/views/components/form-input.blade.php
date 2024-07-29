@@ -48,43 +48,43 @@
     @push('scripts')
         <script>
             $(document).ready(function() {
-                var $select = $('#{{ $name }}');
+                var $select = $(document).find('#{{ $name }}');
                 var currentRoute = '{{ Route::currentRouteName() }}';
                 // List of select elements to exclude
-                var excludeSelects = ['final_account_id', 'account_id', 'fund_acc_id',
-                    'settle_disc_acc_id', 'sell_disc_acc_id', 'comm_acc_id', 'broker_acc_id', 'ex_rate_diff_acc_id',
-                    'gift_acc_id', 'inc_acc_id', 'bank_acc_id',
-                    'settle_disc_acc_id'
-                ];
+                // var excludeSelects = ['final_account_id', 'account_id', 'fund_acc_id',
+                //     'settle_disc_acc_id', 'sell_disc_acc_id', 'comm_acc_id', 'broker_acc_id', 'ex_rate_diff_acc_id',
+                //     'gift_acc_id', 'inc_acc_id', 'bank_acc_id',
+                //     'settle_disc_acc_id'
+                // ];
 
                 // Check if the current select is not in the exclude list
                 // List of select elements to exclude
-                var excludeSelects = ['final_account_id', 'account_id', 'fund_acc_id',
-                    'settle_disc_acc_id', 'sell_disc_acc_id', 'comm_acc_id', 'broker_acc_id', 'ex_rate_diff_acc_id',
-                    'gift_acc_id', 'inc_acc_id', 'bank_acc_id', 'settle_disc_acc_id'
-                ];
+                // var excludeSelects = ['final_account_id', 'account_id', 'fund_acc_id',
+                //     'settle_disc_acc_id', 'sell_disc_acc_id', 'comm_acc_id', 'broker_acc_id', 'ex_rate_diff_acc_id',
+                //     'gift_acc_id', 'inc_acc_id', 'bank_acc_id', 'settle_disc_acc_id'
+                // ];
 
                 // Include 'parent_id' if the route is 'durgstore.items.create' or 'durgstore.items.edit'
-                if (currentRoute === 'durgstore.items.create' || currentRoute === 'durgstore.items.edit') {
-                    excludeSelects.push('parent_id');
-                }
-                if (!excludeSelects.includes('{{ $name }}')) {
-                    var options = {
-                        placeholder: "{{ $label }}",
-                        allowClear: true
-                    };
+                // if (currentRoute === 'durgstore.items.create' || currentRoute === 'durgstore.items.edit') {
+                //     excludeSelects.push('parent_id');
+                // }
 
-                    if ($select.closest('#printInvoiceModal').length) {
-                        options.dropdownParent = $('#printInvoiceModal');
-                        $('#invoice_columns').parent().css('display', 'grid');
-                        $('#invoice_items_columns').parent().css('display', 'grid');
-                    }
-                    if ($select.closest('#filterModal').length) {
-                        options.dropdownParent = $('#filterModal');
-                    }
+                var options = {
+                    placeholder: "{{ $label }}",
+                    allowClear: true
+                };
 
-                    $select.select2(options);
+                if ($select.closest('#printInvoiceModal').length) {
+                    options.dropdownParent = $('#printInvoiceModal');
+                    $('#invoice_columns').parent().css('display', 'grid');
+                    $('#invoice_items_columns').parent().css('display', 'grid');
                 }
+                if ($select.closest('#filterModal').length) {
+                    options.dropdownParent = $('#filterModal');
+                }
+
+                $select.select2(options);
+
             });
         </script>
     @endpush

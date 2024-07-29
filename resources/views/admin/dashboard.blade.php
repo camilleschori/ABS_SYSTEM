@@ -46,6 +46,7 @@
 
                             ['name' => 'التصنيفات', 'icon' => 'bi-list', 'route' => route('admin.categories.index')],
                             ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
+                            ['name' => 'الاعلانات', 'icon' => 'bi-bullseye', 'route' => route('admin.banners.index')],
                             [
                                 'name' => 'العملات',
                                 'icon' => 'bi-currency-exchange',

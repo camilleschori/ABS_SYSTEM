@@ -41,6 +41,7 @@ class ItemsController extends Controller
                 'price' => 'السعر',
                 'is_out_of_stock_status' => 'حالة المخزن',
                 'is_visible_status' => 'حالة الظهور',
+                'view_count' => 'عدد المشاهدات',
             ];
 
             $route = 'admin.items';
@@ -57,6 +58,7 @@ class ItemsController extends Controller
                 $item->is_out_of_stock_status = $item->getIsOutOfStockBadge();
                 $item->is_visible_status = $item->getIsVisibleBadge();
                 $item->brand_name = $item->brand->name;
+                $item->view_count = $item->views()->sum('view_count');
             }
 
             return view('admin.items.index', compact('items', 'headers', 'route', 'buttons'));
@@ -213,8 +215,8 @@ class ItemsController extends Controller
                 $item_price->save();
             }
         }
+        $item->categories()->detach();
         if ($request->input('item_categories')) {
-            $item->categories()->detach();
             foreach ($request->input('item_categories') as $key => $value) {
                 $item->categories()->attach($value);
             }
