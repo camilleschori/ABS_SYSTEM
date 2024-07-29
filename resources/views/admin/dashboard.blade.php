@@ -29,6 +29,7 @@
                                 'icon' => 'bi-person-video2',
                                 'route' => route('admin.suppliers.index'),
                             ],
+                            ['name' => 'المواد', 'icon' => 'bi-box', 'route' => route('admin.items.index')],
                             [
                                 'name' => 'فئات السعر',
                                 'icon' => 'bi-cash-coin',
@@ -45,7 +46,11 @@
 
                             ['name' => 'التصنيفات', 'icon' => 'bi-list', 'route' => route('admin.categories.index')],
                             ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
-                            ['name' => 'العملات', 'icon' => 'bi-currency-exchange', 'route' => route('admin.currencies.index')],
+                            [
+                                'name' => 'العملات',
+                                'icon' => 'bi-currency-exchange',
+                                'route' => route('admin.currencies.index'),
+                            ],
                         ];
 
                     @endphp

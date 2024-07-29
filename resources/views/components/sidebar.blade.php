@@ -35,6 +35,7 @@
                         ['name' => 'الزبائن', 'icon' => 'bi-people', 'route' => route('admin.customers.index')],
 
                         ['name' => 'الموردين', 'icon' => 'bi-person-video2', 'route' => route('admin.suppliers.index')],
+                        ['name' => 'المواد', 'icon' => 'bi-box', 'route' => route('admin.items.index')],
 
                         ['name' => 'الفئات السعر', 'icon' => 'bi-tags', 'route' => route('admin.price_groups.index')],
 
@@ -42,17 +43,16 @@
 
                         ['name' => 'التصنيفات', 'icon' => 'bi-list', 'route' => route('admin.categories.index')],
 
-                      
-                        
-                        
-                         ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
-                         ['name' => 'العملات', 'icon' => 'bi-currency-exchange', 'route' => route('admin.currencies.index')],
-
+                        ['name' => 'المستودعات', 'icon' => 'bi-boxes', 'route' => route('admin.warehouses.index')],
+                        [
+                            'name' => 'العملات',
+                            'icon' => 'bi-currency-exchange',
+                            'route' => route('admin.currencies.index'),
+                        ],
 
                         ['name' => 'المستخدمين', 'icon' => 'bi-person-circle', 'route' => route('admin.users.index')],
 
                         ['name' => 'الاعدادات', 'icon' => 'bi-sliders', 'route' => route('admin.settings.index')],
-
                     ];
 
                 @endphp
