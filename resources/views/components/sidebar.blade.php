@@ -50,6 +50,7 @@
                             'route' => route('admin.currencies.index'),
                         ],
 
+                        ['name' => 'الاعلانات', 'icon' => 'bi-bullseye', 'route' => route('admin.banners.index')],
                         ['name' => 'المستخدمين', 'icon' => 'bi-person-circle', 'route' => route('admin.users.index')],
 
                         ['name' => 'الاعدادات', 'icon' => 'bi-sliders', 'route' => route('admin.settings.index')],

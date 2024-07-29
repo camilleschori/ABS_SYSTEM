@@ -30,6 +30,11 @@
                                     type="button" role="tab" aria-controls="contact"
                                     aria-selected="false">التسعير</button>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="views-tab" data-bs-toggle="tab" data-bs-target="#views"
+                                    type="button" role="tab" aria-controls="views"
+                                    aria-selected="false">المشاهدات</button>
+                            </li>
                         </ul>
 
                         <button type="button" class="btn btn-primary add_attachment">إضافة صورة</button>
@@ -101,6 +106,32 @@
                                                     <input type="number" class="form-control"
                                                         name="price_groups[{{ $price_group->id }}]"
                                                         value="{{ $item->prices->firstWhere('price_group_id', $price_group->id)->price ?? 0 }}">
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="2">لايوجد بيانات</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="views" role="tabpanel" aria-labelledby="views-tab">
+                            <div class="table-responsive overflow-auto">
+                                <table class="table table-hover text-center table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th scope="col">اسم المستخدم</th>
+                                            <th scope="col">عدد المشاهدات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($item->views as $view)
+                                            <tr>
+                                                <td>{{ $view->user->name }}</td>
+                                                <td>
+                                                    {{ $view->view_count }}
                                                 </td>
                                             </tr>
                                         @empty
