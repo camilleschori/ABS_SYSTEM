@@ -6,11 +6,12 @@
     <div id="app">
         <x-sidebar />
 
+
+
         <div id="main" class="vh-100 overflow-auto">
             <x-breadcrumb sub1="المناطق" sub1url="{{ route('admin.regions.index') }}" sub2="اضافة منطقة" />
             <div class="card p-5">
                 <x-form action="{{ route('admin.regions.store') }}" :back="$back" method="POST">
-                    @csrf
 
                     <x-form-input name="type" label="نوع المنطقة" class="col-md-7" type="select" :options="$type_options" />
 

@@ -14,6 +14,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CurrenciesController;
+use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\PriceGroupsController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\WarehousesController;
@@ -45,6 +46,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('users', UsersController::class);
+
+    Route::resource('items', ItemsController::class);
+
+    Route::post('/items/getLastChildCode', [ItemsController::class, 'getLastChildCode'])->name('items.getLastChildCode');
 
     Route::resource('regions', RegionsController::class);
     Route::resource('customers', CustomersController::class);
