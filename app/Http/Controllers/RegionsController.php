@@ -75,6 +75,13 @@ class RegionsController extends Controller
         $province_options = Region::where('type', 'province')->select('id', 'name')->pluck('name', 'id')->toArray();
         $area_options = Region::where('type', 'area')->select('id', 'name')->pluck('name', 'id')->toArray();
 
+        $type_options = [
+            'country' => 'دولة',
+            'province' => 'محافظة',
+            'area' => 'منطقة',
+            'sub_area' => 'منطقة فرعية',
+        ];
+
 
         return view('admin.regions.create', compact('back', 'country_options', 'province_options', 'area_options', 'type_options'));
     }
