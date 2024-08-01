@@ -33,8 +33,8 @@
 
 
                     <div class="col-3">
-                        <img src="{{ url('uploads/brands/' . $brand->logo) }}" class="mt-3 border" width="400"
-                            alt="" srcset="">
+                        <img src="{{ url('ABS_SYSTEM/public/uploads/brands/' . $brand->logo) }}" class="mt-3 border"
+                            width="400" alt="" srcset="">
                     </div>
 
 

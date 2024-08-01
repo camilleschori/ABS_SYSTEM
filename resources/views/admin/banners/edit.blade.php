@@ -58,7 +58,7 @@
 
 
                     <div class="col-3">
-                        <img src="{{ url('uploads/banners/' . $banner->image) }}" class="mt-3 border" width="400"
+                        <img src="{{ url('ABS_SYSTEM/public/uploads/banners/' . $banner->image) }}" class="mt-3 border" width="400"
                             alt="" srcset="">
                     </div>
 
