@@ -36,7 +36,7 @@ class BrandsController extends Controller
         ];
 
         foreach ($brands as $brand) {
-            $brand->created_by_user = $brand->createdByUser->name;
+            $brand->created_by_user = $brand->createdByUser->name ?? 'N/A';
             $brand->logo_url = '<img src="' . url('uploads/brands/' . $brand->logo) . '" width="100" alt="" >';
             $brand->codeEnd = '<div class="text-end">' . $brand->code . '</div>';
             $brand->nameBold = '<span class="' . ($brand->type == 'parent' ? 'fw-bold' : '') . '">' . $brand->name . '</span>';

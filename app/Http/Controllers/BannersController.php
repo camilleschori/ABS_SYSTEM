@@ -40,7 +40,7 @@ class BannersController extends Controller
         ];
 
         foreach ($banners as $banner) {
-            $banner->created_by_user = $banner->createdByUser->name;
+            $banner->created_by_user = $banner->createdByUser->name ?? 'N/A';
             $banner->image_url = $banner->getImageUrl();
             $banner->visible_badge = $banner->getVisibleBadge();
             $banner->type_badge = $banner->getTypeBadge();
