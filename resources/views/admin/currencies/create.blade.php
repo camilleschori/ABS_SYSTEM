@@ -21,10 +21,11 @@
 
                 <x-form action="{{ route('admin.currencies.store') }}" :back="$back" method="POST">
 
-                    <x-form-input name="name" label="الاسم" class="col-md-4" type="text" />
-                    <x-form-input name="symbol" label="الرمز" class="col-md-4" type="text" />
-                    <x-form-input name="is_foreign" label="هل هي عملة محلية؟" class="col-md-4" type="select" :options="$is_foreign_options" />
-                    <x-form-input name="exchange_rate" label="سعر الصرف" class="col-md-4" type="number" />
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text" />
+                    <x-form-input name="symbol" label="الرمز" class="col-md-12" type="text" />
+                    <x-form-input name="is_foreign" label="هل هي عملة محلية؟" class="col-md-12" type="select"
+                        :options="$is_foreign_options" />
+                    <x-form-input name="exchange_rate" label="سعر الصرف" class="col-md-12" type="number" />
 
                 </x-form>
 
