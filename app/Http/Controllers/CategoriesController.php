@@ -36,7 +36,7 @@ class CategoriesController extends Controller
         ];
 
         foreach ($categories as $category) {
-            $category->created_by_user = $category->createdByUser->name;
+            $category->created_by_user = $category->createdByUser->name ?? 'N/A';
             $category->image_url = $category->getImageUrl();
             $category->visible_badge = $category->getVisibleBadge();
             $category->type_badge = $category->getTypeBadge();
