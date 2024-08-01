@@ -67,8 +67,8 @@ class Banner extends Model
     {
 
         return match ($this->is_visible) {
-            1 => '<span class="badge bg-success">مرئي</span>',
-            0 => '<span class="badge bg-warning">مخفي</span>',
+            '1' => '<span class="badge bg-success">مرئي</span>',
+            '0' => '<span class="badge bg-warning">مخفي</span>',
             default => '<span class="badge bg-secondary">N/A</span>',
         };
     }

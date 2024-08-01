@@ -17,10 +17,10 @@
 
                 <x-form action="{{ route('admin.price_groups.update', $price_groups->id) }}" :back="$back" method="PUT">
 
-                    <x-form-input name="name" label="الاسم" class="col-md-4" type="text"
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text"
                         value="{{ $price_groups->name }}" />
 
-                    <x-form-input name="notes" label="الملاحظات" class="col-md-4" type="text"
+                    <x-form-input name="notes" label="الملاحظات" class="col-md-12" type="text"
                         value="{{ $price_groups->notes }}" />
 
                 </x-form>

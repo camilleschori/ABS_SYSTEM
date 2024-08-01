@@ -16,15 +16,15 @@
                 <x-form action="{{ route('admin.brands.store') }}" :back="$back" method="POST">
 
 
-                    <x-form-input name="name" label="الاسم" class="col-md-3" type="text" />
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text" />
 
 
-                    <x-form-input name="code" label="الكود" class="col-md-3" type="text" />
+                    <x-form-input name="code" label="الكود" class="col-md-12" type="text" />
 
 
-                    <x-form-input name="logo" label="الشعار" class="col-md-3" type="file" />
+                    <x-form-input name="logo" label="الشعار" class="col-md-12" type="file" />
 
-                    <x-form-input name="status" label="الحالة" class="col-md-3" type="select" :options="$status_options" />
+                    <x-form-input name="status" label="الحالة" class="col-md-12" type="select" :options="$status_options" />
 
 
                 </x-form>
@@ -38,5 +38,5 @@
     </div>
 
 
-    
+
 @endsection

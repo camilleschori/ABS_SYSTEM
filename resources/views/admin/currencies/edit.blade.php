@@ -6,9 +6,9 @@
 @section('content')
 
 
-@php
-$is_foreign_options = [1 => 'نعم', 0 => 'لا'];
-@endphp
+    @php
+        $is_foreign_options = [1 => 'نعم', 0 => 'لا'];
+    @endphp
 
     <div id="app">
         <x-sidebar />
@@ -21,17 +21,20 @@ $is_foreign_options = [1 => 'نعم', 0 => 'لا'];
 
                 <x-form action="{{ route('admin.currencies.update', $currencies->id) }}" :back="$back" method="PUT">
 
-                    <x-form-input name="name" label="الاسم" class="col-md-4" type="text"
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text"
                         value="{{ $currencies->name }}" />
 
-                    <x-form-input name="symbol" label="الرمز" class="col-md-4" type="text" value="{{ $currencies->symbol }}" />
+                    <x-form-input name="symbol" label="الرمز" class="col-md-12" type="text"
+                        value="{{ $currencies->symbol }}" />
 
-                    <x-form-input name="is_foreign" label="هل هي عملة محلية؟" class="col-md-4" type="select" :options="$is_foreign_options" value="{{ $currencies->is_foreign }}" />
+                    <x-form-input name="is_foreign" label="هل هي عملة محلية؟" class="col-md-12" type="select"
+                        :options="$is_foreign_options" value="{{ $currencies->is_foreign }}" />
 
-                        <x-form-input name="exchange_rate" label="سعر الصرف" class="col-md-4" type="text" value="{{ $currencies->exchange_rate }}" />
-                    
+                    <x-form-input name="exchange_rate" label="سعر الصرف" class="col-md-12" type="text"
+                        value="{{ $currencies->exchange_rate }}" />
 
-                    
+
+
 
                 </x-form>
 

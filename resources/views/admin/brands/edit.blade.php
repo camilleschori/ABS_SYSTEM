@@ -16,25 +16,25 @@
                 <x-form action="{{ route('admin.brands.update', $brand->id) }}" :back="$back" method="PUT">
 
 
-                    <x-form-input name="name" label="الاسم" class="col-md-3" type="text"
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text"
                         value="{{ $brand->name }}" />
 
-              
 
 
-                    <x-form-input name="code" label="الكود" class="col-md-3" type="text"
-                        value="{{ $brand->code }}" readonly />
+
+                    <x-form-input name="code" label="الكود" class="col-md-12" type="text" value="{{ $brand->code }}"
+                        readonly />
 
 
-                    <x-form-input name="logo" label="الشعار" class="col-md-3" type="file" />
+                    <x-form-input name="logo" label="الشعار" class="col-md-12" type="file" />
 
-                    <x-form-input name="status" label="الحالة" class="col-md-3" type="select" :options="$status_options"
+                    <x-form-input name="status" label="الحالة" class="col-md-12" type="select" :options="$status_options"
                         :value="$brand->status" />
 
 
                     <div class="col-3">
-                        <img src="{{ url('uploads/brands/' . $brand->logo) }}" class="mt-3 border"
-                            width="400" alt="" srcset="">
+                        <img src="{{ url('uploads/brands/' . $brand->logo) }}" class="mt-3 border" width="400"
+                            alt="" srcset="">
                     </div>
 
 

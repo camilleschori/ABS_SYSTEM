@@ -15,9 +15,9 @@
 
                 <x-form action="{{ route('admin.price_groups.store') }}" :back="$back" method="POST">
 
-                    <x-form-input name="name" label="الاسم" class="col-md-4" type="text" />
+                    <x-form-input name="name" label="الاسم" class="col-md-12" type="text" />
 
-                    <x-form-input name="notes" label="ملاحظات" class="col-md-4" type="text" />
+                    <x-form-input name="notes" label="ملاحظات" class="col-md-12" type="text" />
 
                 </x-form>
 
