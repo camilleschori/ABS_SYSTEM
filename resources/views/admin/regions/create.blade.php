@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-md-7">
-                        <x-form-input name="name" label=" الاسم العربي" type="text" class="col-md-12" />
+                        <x-form-input name="name" label=" الاسم" type="text" class="col-md-12" />
                     </div>
 
 

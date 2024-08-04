@@ -3,6 +3,7 @@
 
 
 
+use App\Http\Controllers\BannersController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\RegionsController;
@@ -45,13 +46,14 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('users', UsersController::class);
 
     Route::resource('items', ItemsController::class);
 
     Route::post('/items/getLastChildCode', [ItemsController::class, 'getLastChildCode'])->name('items.getLastChildCode');
 
+    Route::resource('banners', BannersController::class);
     Route::resource('regions', RegionsController::class);
     Route::resource('customers', CustomersController::class);
     Route::resource('suppliers', SuppliersController::class);

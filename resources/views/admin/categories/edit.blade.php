@@ -38,8 +38,8 @@
 
 
                     <div class="col-3">
-                        <img src="{{ url('uploads/categories/' . $category->image) }}" class="mt-3 border" width="400"
-                            alt="" srcset="">
+                        <img src="{{ url('ABS_SYSTEM/public/uploads/categories/' . $category->image) }}" class="mt-3 border"
+                            width="400" alt="" srcset="">
                     </div>
 
 

@@ -74,16 +74,16 @@ class Item extends Model
     public function getIsVisibleBadge()
     {
         return match ($this->is_visible) {
-            1 => '<span class="badge bg-success">مرئي</span>',
-            0 => '<span class="badge bg-danger">مخفي</span>',
+            '1' => '<span class="badge bg-success">مرئي</span>',
+            '0' => '<span class="badge bg-danger">مخفي</span>',
             default => '<span class="badge bg-secondary">N/A</span>',
         };
     }
     public function getIsOutOfStockBadge()
     {
         return match ($this->is_out_of_stock) {
-            1 => '<span class="badge bg-danger">نافذ</span>',
-            0 => '<span class="badge bg-success">متاح</span>',
+            '1' => '<span class="badge bg-danger">نافذ</span>',
+            '0' => '<span class="badge bg-success">متاح</span>',
             default => '<span class="badge bg-secondary">N/A</span>',
         };
     }
