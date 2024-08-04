@@ -15,6 +15,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CurrenciesController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\PriceGroupsController;
 use App\Http\Controllers\SettingsController;
@@ -63,4 +64,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('settings', SettingsController::class);
     Route::resource('warehouses', WarehousesController::class);
     Route::resource('currencies', CurrenciesController::class);
+    Route::resource('invoices', InvoicesController::class);
+
+    Route::post('/invoices/AjaxSearch', [InvoicesController::class, 'AjaxSearch'])->name('invoices.AjaxSearch');
 });
