@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/leaflet.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/main.css?v=1') }}">
 
 
     <script src="{{ url('assets/js/jquery.min.js') }}"></script>
@@ -71,11 +71,11 @@
 
     <script>
         // Auto-hide the alert after 5 seconds
-        $(document).ready(function() {
-            setTimeout(function() {
-                $(document).find('.alert').alert('close');
-            }, 1000);
-        })
+        // $(document).ready(function() {
+        //     setTimeout(function() {
+        //         $(document).find('.alert').alert('close');
+        //     }, 1000);
+        // })
         // 5000 milliseconds = 5 seconds
     </script>
     @stack('scripts')

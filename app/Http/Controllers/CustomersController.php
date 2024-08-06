@@ -145,6 +145,8 @@ class CustomersController extends Controller
         $customer = Profile::findOrFail($id);
         $regions = Region::whereIn('type', ['country', 'province', 'area', 'sub_area'])->get();
         $price_group_options = PriceGroup::pluck('name', 'id')->toArray();
+
+        
         $country_options = [];
         $province_options = [];
         $area_options = [];

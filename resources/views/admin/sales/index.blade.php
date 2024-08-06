@@ -1,4 +1,4 @@
-@section('title', 'الفواتير')
+@section('title', 'المبيعات')
 
 @extends('admin.layout')
 
@@ -10,7 +10,7 @@
         <x-sidebar />
 
         <div id="main" class="vh-100 overflow-auto">
-            <x-breadcrumb sub1="الفواتير" />
+            <x-breadcrumb sub1="المبيعات" />
 
             <div class="card">
 
@@ -26,7 +26,7 @@
         </div>
 
 
-        <x-filter-modal action="{{ route('admin.invoices.index') }}">
+        <x-filter-modal action="{{ route('admin.sales.index') }}">
 
             <x-form-input name="start_date" label="من" class="col-md-6" type="date" />
             <x-form-input name="end_date" label="الى" class="col-md-6" type="date" />
