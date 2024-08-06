@@ -13,6 +13,9 @@
 
     <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
 
+    
+    <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+
 </head>
 
 <body>
