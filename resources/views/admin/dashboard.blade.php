@@ -21,7 +21,9 @@
                 <div class="row">
                     @php
                         $cards = [
-                            ['name' => 'الفواتير', 'icon' => 'bi-cart', 'route' => route('admin.invoices.index')],
+                            ['name' => 'المبيعات', 'icon' => 'bi-cart-dash', 'route' => route('admin.sales.index')],
+                            
+                            ['name' => 'المشتريات', 'icon' => 'bi-cart-plus', 'route' => route('admin.purchases.index')],
 
                             ['name' => 'الوكالات', 'icon' => 'bi-tags', 'route' => route('admin.brands.index')],
                             ['name' => 'الزبائن', 'icon' => 'bi-people', 'route' => route('admin.customers.index')],
