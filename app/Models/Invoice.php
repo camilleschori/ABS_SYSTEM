@@ -54,7 +54,7 @@ class Invoice extends Model
         switch ($type) {
             case 'sales':
                 $label = 'مبيعات';
-                $badgeClass = 'badge-success';
+                $badgeClass = 'success';
                 break;
 
             case 'sales_return':
